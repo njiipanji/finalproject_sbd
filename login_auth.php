@@ -1,17 +1,22 @@
 <?php
 	session_start();
-	$conn = include "connect.php";
-	$username = $_POST['id_pegawai'];
-	$password = $_POST['telp_pegawai'];
 
-	$query = "select * from PETUGAS where id_petugas='".$username."' and telp_petugas='".$password."'";
-	$result = oci_parse("connect.php", $query);
-	$tmpcount = oci_fetch($result);
-//	$data = oci_execute($result,OCI_DEFAULT);
-	if ($tmpcount==1) {
-		$_SESSION['username']=$username;
-		header("Location:index-admin.php");
-	} else {
-		header("Location:login.php?status=LOGIN FAILED");
+	include "connect.php";
+
+	$identity = $_POST['id_pegawai'];
+	$password = $_POST['telp_pegawai'];
+	$query = "select telp_petugas
+			  from petugas
+			  where id_petugas='".$identity."'";
+
+	$telp = $conn->query($query)->fetchAll();
+
+	foreach ((array)$telp as $telpPassword) {
+		if ($telpPassword[0]==$password) {
+			$_SESSION['userlogin']=$identity;
+			header("Location:index-admin.php?status=LOGIN SUCCESS");
+		} else {
+			header("Location:login.php?status=LOGIN FAILED");
+		}
 	}
 ?>
