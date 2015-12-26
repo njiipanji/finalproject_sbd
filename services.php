@@ -23,7 +23,7 @@
 								<img src="img/logo.png" style="width:155px">
 							</a>
 							<ul id="nav-mobile" class="right hide-on-med-and-down">
-								<li class="actives"><a href="services.php">Services</a></li>
+								<li class="active"><a href="services.php">Services</a></li>
 								<li><a href="login.php">LOGIN</a></li>
 							</ul>
 						</div>
