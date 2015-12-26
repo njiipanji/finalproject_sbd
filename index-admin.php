@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -25,7 +29,7 @@
 							<ul id="nav-mobile" class="right hide-on-med-and-down">
 								<li><a href="reservation.php">Reservation</a></li>
 								<li><a href="transactions.php">Transaction</a></li>
-								<li><a href="index.php">LOGOUT</a></li>
+								<li><a href="logout_auth.php">LOGOUT</a></li>
 							</ul>
 						</div>
 					</div>
@@ -44,6 +48,7 @@
 						<h1 class="header center blue-text text-lighten-1">Guest House ITS</h1>
 						<div class="row center">
 							<h5 class="header col s12 grey-text text-darken-4 light">Information System</h5>
+							<h5 class="header col s12 grey-text text-darken-4 light"><b>Welcome, <?php echo $_SESSION["userlogin"]?></b></h5>
 						</div>
 						<br><br>
 					</div>
