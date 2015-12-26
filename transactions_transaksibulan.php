@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -25,7 +29,7 @@
 							<ul id="nav-mobile" class="right hide-on-med-and-down">
 								<li><a href="reservation.php">Reservation</a></li>
 								<li class="active"><a href="transactions.php">Transaction</a></li>
-								<li><a href="index.php">LOGOUT</a></li>
+								<li><a href="logout_auth.php">LOGOUT</a></li>
 							</ul>
 						</div>
 					</div>
