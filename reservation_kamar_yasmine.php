@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include "connect.php";
 	$query = "select max(id_transaksi)+1 as next_transaksi
 			  from transaksi_sewa_kamar";
@@ -32,7 +33,7 @@
 							<ul id="nav-mobile" class="right hide-on-med-and-down">
 								<li class="active"><a href="reservation.php">Reservation</a></li>
 								<li><a href="transactions.php">Transaction</a></li>
-								<li><a href="index.php">LOGOUT</a></li>
+								<li><a href="logout_auth.php">LOGOUT</a></li>
 							</ul>
 						</div>
 					</div>
@@ -55,7 +56,7 @@
 						<div id="input" class="section scrollspy">
 							<div class="row">
 								<!--Form-->
-								<form class="col s12" action="reservation_input_tamu.php" method="post">
+								<form class="col s12" action="reservation_kamar_auth.php" method="post">
 									<div class="col s12 m12 l8 offset-l2">
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
