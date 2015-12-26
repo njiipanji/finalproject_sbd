@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include "connect.php";
 	$query = "select w.nama_wisma, jk.nama_jenis_kamar, k.no_kamar
 			  from kamar k, wisma w, jenis_kamar jk
@@ -36,7 +37,7 @@
 							<ul id="nav-mobile" class="right hide-on-med-and-down">
 								<li><a href="reservation.php">Reservation</a></li>
 								<li class="active"><a href="transactions.php">Transaction</a></li>
-								<li><a href="index.php">LOGOUT</a></li>
+								<li><a href="logout_auth.php">LOGOUT</a></li>
 							</ul>
 						</div>
 					</div>
