@@ -73,7 +73,7 @@
 
 			<div id="index-banner" class="parallax-container valign-wrapper">
 				<div class="parallax">
-					<img src="img/backyard.jpg" alt="Unsplashed background img 1" style="display: block;transform: translate3d(-50%, 205px, 0px);">
+					<img src="img/backyard-blur.jpg" alt="Unsplashed background img 1" style="display: block;transform: translate3d(-50%, 205px, 0px);">
 				</div>
 			</div>
 
