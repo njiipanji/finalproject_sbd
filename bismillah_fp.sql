@@ -161,7 +161,8 @@ CREATE TABLE TAMU (
   TELP_TAMU VARCHAR(20)
 );
 
-
+INSERT INTO TAMU VALUES('5114100075','Panji Rimawan',TIMESTAMP'1995-11-23 00:00:00','Sumbersari, Jember','085655940651');
+INSERT INTO TAMU VALUES('5114100097','Abdul Majid Hasani',TIMESTAMP'1997-3-4 00:00:00','Sidoarjo','085234672135');
 
 /*-----------------------------------------------------------------------------------------------------------------------------*/
 CREATE TABLE TRANSAKSI_SEWA_KAMAR
@@ -180,6 +181,8 @@ CREATE TABLE TRANSAKSI_SEWA_KAMAR
   CONSTRAINT ID_TAMU_FK FOREIGN KEY(ID_TAMU) REFERENCES TAMU(ID_TAMU)
 );
 
+INSERT INTO TRANSAKSI_SEWA_KAMAR VALUES('100001','PG_001','5114100075',SYSTIMESTAMP,TIMESTAMP'2015-11-15 10:00:00',TIMESTAMP'2015-11-20 10:00:00','5',SYSTIMESTAMP,'0','300000');
+INSERT INTO TRANSAKSI_SEWA_KAMAR VALUES('100002','PG_003','5114100097',SYSTIMESTAMP,TIMESTAMP'2015-12-1 10:00:00',TIMESTAMP'2015-12-3 10:00:00','2',SYSTIMESTAMP,'0','400000');
 
 /*-----------------------------------------------------------------------------------------------------------------------------*/
 CREATE TABLE MENYEWA (
@@ -188,3 +191,18 @@ CREATE TABLE MENYEWA (
   CONSTRAINT NO_KAMAR_FK FOREIGN KEY(NO_KAMAR) REFERENCES KAMAR(NO_KAMAR),
   CONSTRAINT ID_TRANSAKSI_FK FOREIGN KEY(ID_TRANSAKSI) REFERENCES TRANSAKSI_SEWA_KAMAR(ID_TRANSAKSI)
 );
+
+INSERT INTO MENYEWA VALUES('301','100001');
+INSERT INTO MENYEWA VALUES('Y01','100002');
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/*Soal Query*/
+SELECT w.nama_wisma, jk.nama_jenis_kamar, k.no_kamar
+FROM kamar k, wisma w, jenis_kamar jk
+WHERE status_kamar='0' and
+      k.id_wisma=w.id_wisma and
+      k.id_jenis_kamar=jk.id_jenis_kamar
+ORDER BY k.no_kamar ASC;
+
+
