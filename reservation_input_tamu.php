@@ -48,7 +48,7 @@
 						<div id="input" class="section scrollspy">
 							<div class="row">
 								<!--Form-->
-								<form class="col s12" action="reservation_final.php" method="post">
+								<form class="col s12" action="reservation_input_tamu_auth.php" method="post">
 									<div class="col s12 m12 l8 offset-l2">
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
