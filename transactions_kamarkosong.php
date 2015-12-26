@@ -1,6 +1,11 @@
 <?php
 	include "connect.php";
-	$query = "select * from KAMAR where status_kamar='0'";
+	$query = "select w.nama_wisma, jk.nama_jenis_kamar, k.no_kamar
+			  from kamar k, wisma w, jenis_kamar jk
+			  where status_kamar='0' and
+			  		k.id_wisma=w.id_wisma and
+			  		k.id_jenis_kamar=jk.id_jenis_kamar
+			  order by k.no_kamar asc";
 	$rooms = $conn->query($query)->fetchAll();
 ?>
 
@@ -86,8 +91,8 @@
 						<table class="centered responsive-table highlight">
 							<thead>
 								<tr>
-									<th>ID WISMA</th>
-									<th>ID JENIS KAMAR</th>
+									<th>WISMA</th>
+									<th>JENIS KAMAR</th>
 									<th>NO KAMAR</th>
 								</tr>
 							</thead>
@@ -96,8 +101,8 @@
 									foreach ((array)$rooms as $room) {
 										?>
 										<tr>
-											<td><?php echo $room['ID_WISMA']?></td>
-											<td><?php echo $room['ID_JENIS_KAMAR']?></td>
+											<td><?php echo $room['NAMA_WISMA']?></td>
+											<td><?php echo $room['NAMA_JENIS_KAMAR']?></td>
 											<td><?php echo $room['NO_KAMAR']?></td>
 										</tr>
 										<?php
