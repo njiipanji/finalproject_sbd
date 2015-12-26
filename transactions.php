@@ -49,7 +49,7 @@
 						<div id="input" class="section scrollspy">
 							<div class="row">
 								<!--Form-->
-								<form class="col s12" action="#" method="post">
+								<form class="col s12" action="transactions_kamarkosong.php" method="post">
 									<div class="col s12 m12 l8 offset-l2">
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
@@ -80,7 +80,7 @@
 						<div id="input" class="section scrollspy">
 							<div class="row">
 								<!--Form-->
-								<form class="col s12" action="#" method="post">
+								<form class="col s12" action="transactions_keuangan.php" method="post">
 									<div class="col s12 m12 l8 offset-l2">
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
@@ -111,7 +111,7 @@
 						<div id="input" class="section scrollspy">
 							<div class="row">
 								<!--Form-->
-								<form class="col s12" action="#" method="post">
+								<form class="col s12" action="transactions_transaksibulan.php" method="post">
 									<div class="col s12 m12 l8 offset-l2">
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
@@ -142,7 +142,7 @@
 						<div id="input" class="section scrollspy">
 							<div class="row">
 								<!--Form-->
-								<form class="col s12" action="#" method="post">
+								<form class="col s12" action="transactions_tamu.php" method="post">
 									<div class="col s12 m12 l8 offset-l2">
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
