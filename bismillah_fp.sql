@@ -193,14 +193,15 @@ CREATE TABLE MENYEWA (
 );
 
 INSERT INTO MENYEWA VALUES('301','100001');
+UPDATE KAMAR SET STATUS_KAMAR='1' WHERE NO_KAMAR='301';
 INSERT INTO MENYEWA VALUES('Y01','100002');
-
+UPDATE KAMAR SET STATUS_KAMAR='1' WHERE NO_KAMAR='Y01';
 
 /*-----------------------------------------------------------------------------------------------------------------------------*/
 /*Soal Query*/
 SELECT w.nama_wisma, jk.nama_jenis_kamar, k.no_kamar
 FROM kamar k, wisma w, jenis_kamar jk
-WHERE status_kamar='0' and
+WHERE k.status_kamar='0' and
       k.id_wisma=w.id_wisma and
       k.id_jenis_kamar=jk.id_jenis_kamar
 ORDER BY k.no_kamar ASC;
