@@ -21,7 +21,7 @@ Sistem dapat menangani transaksi di lebih dari 3 wisma yang ada yaitu:
 
 
 Query dan Report/Laporan:
-1. Petugas dapat melakukan pencarian kamar kosong
+(v) 1. Petugas dapat melakukan pencarian kamar kosong
 2. Pengelola membutuhkan data pemasukan seluruh wisma tamu dan wisma tamu mana saja yang pemasukannya paling besar
 3. Petugas dapat menampilkan jumlah penyewaan di wisma yang disewa pada bulan tertentu melebihi 5x transaksi penyewaan. 
 4. Menampilkan tamu yang menyewa kamar di bulan november dan lahir pada bulan november.
