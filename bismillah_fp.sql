@@ -153,3 +153,38 @@ INSERT INTO FASILITAS_KAMAR VALUES('J06','FYS05','Dapur','1750000');
 
 
 /*-----------------------------------------------------------------------------------------------------------------------------*/
+CREATE TABLE TAMU (
+  ID_TAMU CHAR(17) PRIMARY KEY NOT NULL,
+  NAMA_TAMU VARCHAR(50),
+  TTL_TAMU TIMESTAMP,
+  ALAMAT_TAMU VARCHAR(256),
+  TELP_TAMU VARCHAR(20)
+);
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+CREATE TABLE TRANSAKSI_SEWA_KAMAR
+(
+  ID_TRANSAKSI CHAR(6) PRIMARY KEY NOT NULL,
+  ID_PETUGAS CHAR(6),
+  ID_TAMU CHAR(17),
+  TGL_TRANSAKSI TIMESTAMP,
+  TGL_CHECKIN TIMESTAMP,
+  TGL_CHECKOUT TIMESTAMP,
+  LAMA_INAP INTEGER,
+  TGL_BAYAR TIMESTAMP,
+  DENDA INT,
+  TOTAL INT,
+  CONSTRAINT ID_PETUGAS_FK FOREIGN KEY(ID_PETUGAS) REFERENCES PETUGAS(ID_PETUGAS),
+  CONSTRAINT ID_TAMU_FK FOREIGN KEY(ID_TAMU) REFERENCES TAMU(ID_TAMU)
+);
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+CREATE TABLE MENYEWA (
+  NO_KAMAR CHAR(3) NOT NULL,
+  ID_TRANSAKSI CHAR(6) NOT NULL,
+  CONSTRAINT NO_KAMAR_FK FOREIGN KEY(NO_KAMAR) REFERENCES KAMAR(NO_KAMAR),
+  CONSTRAINT ID_TRANSAKSI_FK FOREIGN KEY(ID_TRANSAKSI) REFERENCES TRANSAKSI_SEWA_KAMAR(ID_TRANSAKSI)
+);
