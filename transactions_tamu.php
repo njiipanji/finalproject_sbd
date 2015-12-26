@@ -52,6 +52,9 @@
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
 											<div class="row">
+												<div class="row center">
+													<i class="medium material-icons">person</i>
+												</div>
 												<h5 class="center-align">CEK TAMU</h5>
 												<p class="center-align">Menampilkan daftar tamu di bulan tertentu dari berbagai wisma.</p><br>
 												<div class="col s12 m11 l11" id="bulanCheck-In">

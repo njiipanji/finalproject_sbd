@@ -52,6 +52,9 @@
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
 											<div class="row">
+												<div class="row center">
+													<i class="medium material-icons">hotel</i>
+												</div>
 												<h5 class="center-align">CEK KAMAR KOSONG</h5>
 												<p class="center-align">Menampilkan kamar-kamar kosong dari berbagai wisma.</p><br><br>
 												<div class="col s12 m12 l12 center" id="cekKamarKosong">

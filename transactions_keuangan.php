@@ -52,6 +52,9 @@
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
 											<div class="row">
+												<div class="row center">
+													<i class="medium material-icons">account_balance</i>
+												</div>
 												<h5 class="center-align">CEK KEUANGAN</h5>
 												<p class="center-align">Menampilkan pemasukan dan pengeluaran dari berbagai wisma.</p><br><br>
 												<div class="col s12 m12 l12 center" id="cekBalance">
@@ -71,7 +74,7 @@
 
 			<!--TABEL QUERY-->
 			<div class="container"></div>
-			
+
 		</main>
 
 		<!--Scripts: Import jQuery before materialize.js-->

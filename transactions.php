@@ -53,6 +53,9 @@
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
 											<div class="row">
+												<div class="row center">
+													<i class="medium material-icons">hotel</i>
+												</div>
 												<h5 class="center-align">CEK KAMAR KOSONG</h5>
 												<p class="center-align">Menampilkan kamar-kamar kosong dari berbagai wisma.</p><br><br>
 												<div class="col s12 m12 l12 center" id="cekKamarKosong">
@@ -81,6 +84,9 @@
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
 											<div class="row">
+												<div class="row center">
+													<i class="medium material-icons">account_balance</i>
+												</div>
 												<h5 class="center-align">CEK KEUANGAN</h5>
 												<p class="center-align">Menampilkan pemasukan dan pengeluaran dari berbagai wisma.</p><br><br>
 												<div class="col s12 m12 l12 center" id="cekBalance">
@@ -109,6 +115,9 @@
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
 											<div class="row">
+												<div class="row center">
+													<i class="medium material-icons">attach_money</i>
+												</div>
 												<h5 class="center-align">CEK TRANSAKSI BULAN</h5>
 												<p class="center-align">Menampilkan transaksi di bulan tertentu dari berbagai wisma.</p><br><br>
 												<div class="col s12 m12 l12 center" id="cekTransaksiBulan">
@@ -137,6 +146,9 @@
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
 											<div class="row">
+												<div class="row center">
+													<i class="medium material-icons">person</i>
+												</div>
 												<h5 class="center-align">CEK TAMU</h5>
 												<p class="center-align">Menampilkan daftar tamu di bulan tertentu dari berbagai wisma.</p><br>
 												<div class="col s12 m11 l11" id="bulanCheck-In">
@@ -145,8 +157,8 @@
 													</div>
 													<label class="col s10" for="bulanCheckIn">Bulan Check-In</label>
 													<div class="col s10">
-														<select class="browser-default" id="bulanCheckIn" name="bulanCheckIn">
-															<option value=""disabled selected>Pilih Bulan</option>
+														<select class="browser-default" id="bulanCheckIn" name="bulanCheckIn" disabled>
+															<option value="">Pilih Bulan</option>
 															<option value="1">Januari</option>
 															<option value="2">Februari</option>
 															<option value="3">Maret</option>
@@ -157,7 +169,7 @@
 															<option value="8">Agustus</option>
 															<option value="9">September</option>
 															<option value="10">Oktober</option>
-															<option value="11">November</option>
+															<option value="11" selected>November</option>
 															<option value="12">Desember</option>
 														</select>
 													</div>
@@ -168,8 +180,8 @@
 													</div>
 													<label class="col s10" for="bulanLahir">Bulan Lahir Tamu</label>
 													<div class="col s10">
-														<select class="browser-default" id="bulanLahir" name="bulanLahir">
-															<option value=""disabled selected>Pilih Bulan</option>
+														<select class="browser-default" id="bulanLahir" name="bulanLahir" disabled>
+															<option value="">Pilih Bulan</option>
 															<option value="1">Januari</option>
 															<option value="2">Februari</option>
 															<option value="3">Maret</option>
@@ -180,7 +192,7 @@
 															<option value="8">Agustus</option>
 															<option value="9">September</option>
 															<option value="10">Oktober</option>
-															<option value="11">November</option>
+															<option value="11" selected>November</option>
 															<option value="12">Desember</option>
 														</select>
 													</div>
