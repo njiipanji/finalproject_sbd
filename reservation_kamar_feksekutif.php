@@ -1,3 +1,10 @@
+<?php
+	include "connect.php";
+	$query = "select max(id_transaksi)+1 as next_transaksi
+			  from transaksi_sewa_kamar";
+	$id = $conn->query($query)->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -56,10 +63,25 @@
 												<h5 class="center-align">REGISTRASI KAMAR</h5>
 												<div class="col s12 m11 l11" id="wismaID">
 													<div class="input-field col s2 center">
+														<i class="small material-icons">payment</i>
+													</div>
+													<div class="input-field col s10">
+													<?php
+														foreach ((array)$id as $idNext) {
+													?>		
+														<input readonly value="<?php echo $idNext[0];?>" name="id_transaksi" id="id_transaksi" type="text">
+														<label for="id_transaksi">ID Transaksi</label>
+													<?php
+														}
+													?>
+													</div>
+												</div>
+												<div class="col s12 m11 l11" id="wismaID">
+													<div class="input-field col s2 center">
 														<i class="small material-icons">store</i>
 													</div>
 													<div class="input-field col s10">
-														<input disabled value="W01" id="id_wisma" type="text" class="validate">
+														<input readonly value="W01" name="id_wisma" id="id_wisma" type="text">
 														<label for="id_wisma">ID Wisma</label>
 													</div>
 												</div>
@@ -68,7 +90,7 @@
 														<i class="small material-icons">hotel</i>
 													</div>
 													<div class="input-field col s10">
-														<input disabled value="J02" id="id_jenis" type="text" class="validate">
+														<input readonly value="J02" name="id_jenis" id="id_jenis" type="text">
 														<label for="id_jenis">ID Jenis Kamar</label>
 													</div>
 												</div>
@@ -78,7 +100,7 @@
 													</div>
 													<label class="col s10" for="no_kamar">Nomor Kamar</label>
 													<div class="col s10">
-														<select class="browser-default" id="no_kamar">
+														<select class="browser-default" name="no_kamar" id="no_kamar">
 															<option value=""disabled selected>Pilih Kamar</option>
 															<option value="201">201</option>
 															<option value="202">202</option>
@@ -94,7 +116,7 @@
 													</div>
 													<label class="col s10" for="check_in">Check-In</label>
 													<div class="col s10">
-														<input id="check_in" type="date" class="datepicker">
+														<input name="check_in" id="check_in" type="date" class="datepicker">
 													</div>
 												</div>
 												<div class="col s12 m11 l11" id="tglCheckOut">
@@ -103,7 +125,7 @@
 													</div>
 													<label class="col s10" for="check_out">Check-Out</label>
 													<div class="col s10">
-														<input id="check_out" type="date" class="datepicker">
+														<input name="check_out" id="check_out" type="date" class="datepicker">
 													</div>
 												</div>
 											</div>

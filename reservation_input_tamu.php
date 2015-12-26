@@ -48,7 +48,7 @@
 						<div id="input" class="section scrollspy">
 							<div class="row">
 								<!--Form-->
-								<form class="col s12" action="#" method="post">
+								<form class="col s12" action="reservation_final.php" method="post">
 									<div class="col s12 m12 l8 offset-l2">
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
@@ -59,7 +59,7 @@
 														<i class="small material-icons">person_pin</i>
 													</div>
 													<div class="input-field col s10">
-														<input id="id_tamu" type="text" class="validate">
+														<input name="id_tamu" id="id_tamu" type="text" class="validate">
 														<label for="id_tamu">No Identitas</label>
 													</div>
 												</div>
@@ -68,7 +68,7 @@
 														<i class="small material-icons">person</i>
 													</div>
 													<div class="input-field col s10">
-														<input id="nama_tamu" type="text" class="validate">
+														<input name="nama_tamu" id="nama_tamu" type="text" class="validate">
 														<label for="nama_tamu">Nama Lengkap</label>
 													</div>
 												</div>
@@ -78,7 +78,7 @@
 													</div>
 													<label class="col s10" for="ttl_tamu">Tanggal Lahir</label>
 													<div class="col s10">
-														<input id="ttl_tamu" type="date" class="datepicker">
+														<input name="ttl_tamu" id="ttl_tamu" type="date" class="datepicker">
 													</div>
 												</div>
 												<div class="col s12 m11 l11" id="alamatTamu">
@@ -86,7 +86,7 @@
 														<i class="small material-icons">location_on</i>
 													</div>
 													<div class="input-field col s10">
-														<input id="alamat_tamu" type="text" class="validate">
+														<input name="alamat_tamu" id="alamat_tamu" type="text" class="validate">
 														<label for="alamat_tamu">Alamat</label>
 													</div>
 												</div>
@@ -95,7 +95,7 @@
 														<i class="small material-icons">phone</i>
 													</div>
 													<div class="input-field col s10">
-														<input id="telp_tamu" type="text" class="validate">
+														<input name="telp_tamu" id="telp_tamu" type="text" class="validate">
 														<label for="telp_tamu">Telephone</label>
 													</div>
 												</div>
