@@ -13,6 +13,6 @@ if (!$conn) {
 	echo "Connection failed.", $error['text'];
 }
 else{
-	echo "Connected successfully";
+	//echo "Connected successfully";
 }
 ?>
