@@ -1,3 +1,9 @@
+<?php
+	include "connect.php";
+	$query = "select * from KAMAR where status_kamar='0'";
+	$rooms = $conn->query($query)->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -74,7 +80,34 @@
 			</div>
 
 			<!--TABEL QUERY-->
-			<div class="container"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m12 l10 offset-l1">
+						<table class="centered responsive-table highlight">
+							<thead>
+								<tr>
+									<th>ID WISMA</th>
+									<th>ID JENIS KAMAR</th>
+									<th>NO KAMAR</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php
+									foreach ((array)$rooms as $room) {
+										?>
+										<tr>
+											<td><?php echo $room['ID_WISMA']?></td>
+											<td><?php echo $room['ID_JENIS_KAMAR']?></td>
+											<td><?php echo $room['NO_KAMAR']?></td>
+										</tr>
+										<?php
+									}
+								?>
+							</tbody>
+						</table>
+					</div>	
+				</div>
+			</div>
 
 		</main>
 
