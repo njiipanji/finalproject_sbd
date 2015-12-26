@@ -183,6 +183,7 @@ CREATE TABLE TRANSAKSI_SEWA_KAMAR
 
 INSERT INTO TRANSAKSI_SEWA_KAMAR VALUES('100001','PG_001','5114100075',SYSTIMESTAMP,TIMESTAMP'2015-11-15 10:00:00',TIMESTAMP'2015-11-20 10:00:00','5',SYSTIMESTAMP,'0','300000');
 INSERT INTO TRANSAKSI_SEWA_KAMAR VALUES('100002','PG_003','5114100097',SYSTIMESTAMP,TIMESTAMP'2015-12-1 10:00:00',TIMESTAMP'2015-12-3 10:00:00','2',SYSTIMESTAMP,'0','400000');
+DELETE FROM TRANSAKSI_SEWA_KAMAR WHERE ID_TRANSAKSI = '100005';
 
 /*-----------------------------------------------------------------------------------------------------------------------------*/
 CREATE TABLE MENYEWA (
@@ -205,5 +206,3 @@ WHERE k.status_kamar='0' and
       k.id_wisma=w.id_wisma and
       k.id_jenis_kamar=jk.id_jenis_kamar
 ORDER BY k.no_kamar ASC;
-
-
