@@ -7,7 +7,7 @@ Aturan:
 3. Ada tugas individu (per mahasiswa) untuk membuat query dan laporan/report (dijelaskan pada aturan no.6).
 (v) 4. Laporan mengikuti template FP yang diberikan.
 (v) 5. Setiap tabel pada database HARUS memiliki data yang valid dan cukup, agar bisa ditampilkan pada query dan report (tidak boleh ada alasan hasil query tidak sesuai/tidak tampil karena data kurang)
-(v) 5. Melanjutkan studi kasus: Fasilitas Olahraga (Fasor) dan Wisma Tamu dengan ketentuan sbb:
+(v) 6. Melanjutkan studi kasus: Fasilitas Olahraga (Fasor) dan Wisma Tamu dengan ketentuan sbb:
 
 -----------------------------------------------------------------------------------------
 WISMA TAMU:::

@@ -37,13 +37,14 @@
 			<div class="container">
 				<div class="center">
 					<br>
-					<h1>RESERVATION</h1>
-					<p class="center-align light"><b>STEP 4</b><br>Masukkan data diri tamu.</p>
+					<h1>TRANSACTIONS</h1>
+					<p class="center-align light">Pilih pilihan yang diinginkan.</p>
 				</div>
 			</div>
+
 			<div class="container">
 				<div class="row">
-					<div class="col s12 m12 l12">
+					<div class="col s12 m12 l10 offset-l1">
 						<div id="input" class="section scrollspy">
 							<div class="row">
 								<!--Form-->
@@ -52,58 +53,15 @@
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
 											<div class="row">
-												<h5 class="center-align">REGISTRASI TAMU</h5>
-												<div class="col s12 m11 l11" id="noID">
-													<div class="input-field col s2 center">
-														<i class="small material-icons">person_pin</i>
-													</div>
-													<div class="input-field col s10">
-														<input id="id_tamu" type="text" class="validate">
-														<label for="id_tamu">No Identitas</label>
-													</div>
-												</div>
-												<div class="col s12 m11 l11" id="namaTamu">
-													<div class="input-field col s2 center">
-														<i class="small material-icons">person</i>
-													</div>
-													<div class="input-field col s10">
-														<input id="nama_tamu" type="text" class="validate">
-														<label for="nama_tamu">Nama Lengkap</label>
-													</div>
-												</div>
-												<div class="col s12 m11 l11" id="ttlTamu">
-													<div class="input-field col s2 center">
-														<i class="small material-icons">date_range</i>
-													</div>
-													<label class="col s10" for="ttl_tamu">Tanggal Lahir</label>
-													<div class="col s10">
-														<input id="ttl_tamu" type="date" class="datepicker">
-													</div>
-												</div>
-												<div class="col s12 m11 l11" id="alamatTamu">
-													<div class="input-field col s2 center">
-														<i class="small material-icons">location_on</i>
-													</div>
-													<div class="input-field col s10">
-														<input id="alamat_tamu" type="text" class="validate">
-														<label for="alamat_tamu">Alamat</label>
-													</div>
-												</div>
-												<div class="col s12 m11 l11" id="telephoneTamu">
-													<div class="input-field col s2 center">
-														<i class="small material-icons">phone</i>
-													</div>
-													<div class="input-field col s10">
-														<input id="telp_tamu" type="text" class="validate">
-														<label for="telp_tamu">Telephone</label>
-													</div>
+												<h5 class="center-align">CEK KAMAR KOSONG</h5>
+												<p class="center-align">Menampilkan kamar-kamar kosong dari berbagai wisma.</p><br><br>
+												<div class="col s12 m12 l12 center" id="cekKamarKosong">
+													<button class="btn waves-effect waves-light" type="submit">CEK
+														<i class="material-icons right">send</i>
+													</button>
 												</div>
 											</div>
 										</div>
-									<div class="col s12 m12 l12 center">
-										<button class="btn waves-effect waves-light" type="submit">NEXT
-											<i class="material-icons right">send</i>
-										</button>	
 									</div>
 								</form>
 							</div>
@@ -111,6 +69,138 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m12 l10 offset-l1">
+						<div id="input" class="section scrollspy">
+							<div class="row">
+								<!--Form-->
+								<form class="col s12" action="#" method="post">
+									<div class="col s12 m12 l8 offset-l2">
+										<!--Box-->
+										<div class="card-panel grey lighten-5 z-depth-1">
+											<div class="row">
+												<h5 class="center-align">CEK KEUANGAN</h5>
+												<p class="center-align">Menampilkan pemasukan dan pengeluaran dari berbagai wisma.</p><br><br>
+												<div class="col s12 m12 l12 center" id="cekBalance">
+													<button class="btn waves-effect waves-light" type="submit">CEK
+														<i class="material-icons right">send</i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m12 l10 offset-l1">
+						<div id="input" class="section scrollspy">
+							<div class="row">
+								<!--Form-->
+								<form class="col s12" action="#" method="post">
+									<div class="col s12 m12 l8 offset-l2">
+										<!--Box-->
+										<div class="card-panel grey lighten-5 z-depth-1">
+											<div class="row">
+												<h5 class="center-align">CEK TRANSAKSI BULAN</h5>
+												<p class="center-align">Menampilkan transaksi di bulan tertentu dari berbagai wisma.</p><br><br>
+												<div class="col s12 m12 l12 center" id="cekTransaksiBulan">
+													<button class="btn waves-effect waves-light" type="submit">CEK
+														<i class="material-icons right">send</i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m12 l10 offset-l1">
+						<div id="input" class="section scrollspy">
+							<div class="row">
+								<!--Form-->
+								<form class="col s12" action="#" method="post">
+									<div class="col s12 m12 l8 offset-l2">
+										<!--Box-->
+										<div class="card-panel grey lighten-5 z-depth-1">
+											<div class="row">
+												<h5 class="center-align">CEK TAMU</h5>
+												<p class="center-align">Menampilkan daftar tamu di bulan tertentu dari berbagai wisma.</p><br>
+												<div class="col s12 m11 l11" id="bulanCheck-In">
+													<div class="input-field col s2 center">
+														<i class="small material-icons">date_range</i>
+													</div>
+													<label class="col s10" for="bulanCheckIn">Bulan Check-In</label>
+													<div class="col s10">
+														<select class="browser-default" id="bulanCheckIn" name="bulanCheckIn">
+															<option value=""disabled selected>Pilih Bulan</option>
+															<option value="1">Januari</option>
+															<option value="2">Februari</option>
+															<option value="3">Maret</option>
+															<option value="4">April</option>
+															<option value="5">Mei</option>
+															<option value="6">Juni</option>
+															<option value="7">Juli</option>
+															<option value="8">Agustus</option>
+															<option value="9">September</option>
+															<option value="10">Oktober</option>
+															<option value="11">November</option>
+															<option value="12">Desember</option>
+														</select>
+													</div>
+												</div>
+												<div class="col s12 m11 l11" id="bulanCheck-In">
+													<div class="input-field col s2 center">
+														<i class="small material-icons">date_range</i>
+													</div>
+													<label class="col s10" for="bulanLahir">Bulan Lahir Tamu</label>
+													<div class="col s10">
+														<select class="browser-default" id="bulanLahir" name="bulanLahir">
+															<option value=""disabled selected>Pilih Bulan</option>
+															<option value="1">Januari</option>
+															<option value="2">Februari</option>
+															<option value="3">Maret</option>
+															<option value="4">April</option>
+															<option value="5">Mei</option>
+															<option value="6">Juni</option>
+															<option value="7">Juli</option>
+															<option value="8">Agustus</option>
+															<option value="9">September</option>
+															<option value="10">Oktober</option>
+															<option value="11">November</option>
+															<option value="12">Desember</option>
+														</select>
+													</div>
+												</div>
+												<div class="col s12 m12 l12 center" id="cekTransaksiBulan">
+													<br><br>
+													<button class="btn waves-effect waves-light" type="submit">CEK
+														<i class="material-icons right">send</i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</main>
 
 		<!--Scripts: Import jQuery before materialize.js-->
