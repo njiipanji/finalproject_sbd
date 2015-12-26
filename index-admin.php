@@ -24,7 +24,7 @@
 							</a>
 							<ul id="nav-mobile" class="right hide-on-med-and-down">
 								<li><a href="reservation.php">Reservation</a></li>
-								<li><a href="#">Transaction</a></li>
+								<li><a href="transactions.php">Transaction</a></li>
 							</ul>
 						</div>
 					</div>

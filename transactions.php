@@ -10,7 +10,7 @@
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-		<title>Reservations</title>
+		<title>Transactions</title>
 	</head>
 	<body>
 		<header>
@@ -23,8 +23,8 @@
 								<img src="img/logo.png" style="width:155px">
 							</a>
 							<ul id="nav-mobile" class="right hide-on-med-and-down">
-								<li class="active"><a href="reservation.php">Reservation</a></li>
-								<li><a href="transactions.php">Transaction</a></li>
+								<li><a href="reservation.php">Reservation</a></li>
+								<li class="active"><a href="transactions.php">Transaction</a></li>
 							</ul>
 						</div>
 					</div>
@@ -38,7 +38,7 @@
 				<div class="center">
 					<br>
 					<h1>RESERVATION</h1>
-					<p class="center-align light"><b>STEP 3</b><br>Pilih kamar serta tanggal check-in dan check-out.</p>
+					<p class="center-align light"><b>STEP 4</b><br>Masukkan data diri tamu.</p>
 				</div>
 			</div>
 			<div class="container">
@@ -47,72 +47,55 @@
 						<div id="input" class="section scrollspy">
 							<div class="row">
 								<!--Form-->
-								<form class="col s12" action="reservation_input_tamu.php" method="post">
+								<form class="col s12" action="#" method="post">
 									<div class="col s12 m12 l8 offset-l2">
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
 											<div class="row">
-												<h5 class="center-align">REGISTRASI KAMAR</h5>
-												<div class="col s12 m11 l11" id="wismaID">
+												<h5 class="center-align">REGISTRASI TAMU</h5>
+												<div class="col s12 m11 l11" id="noID">
 													<div class="input-field col s2 center">
-														<i class="small material-icons">store</i>
+														<i class="small material-icons">person_pin</i>
 													</div>
 													<div class="input-field col s10">
-														<input disabled value="W02" id="id_wisma" type="text" class="validate">
-														<label for="id_wisma">ID Wisma</label>
+														<input id="id_tamu" type="text" class="validate">
+														<label for="id_tamu">No Identitas</label>
 													</div>
 												</div>
-												<div class="col s12 m11 l11" id="jenisID">
+												<div class="col s12 m11 l11" id="namaTamu">
 													<div class="input-field col s2 center">
-														<i class="small material-icons">hotel</i>
+														<i class="small material-icons">person</i>
 													</div>
 													<div class="input-field col s10">
-														<input disabled value="J04" id="id_jenis" type="text" class="validate">
-														<label for="id_jenis">ID Jenis Kamar</label>
+														<input id="nama_tamu" type="text" class="validate">
+														<label for="nama_tamu">Nama Lengkap</label>
 													</div>
 												</div>
-												<div class="col s12 m11 l11" id="noKamar">
-													<div class="input-field col s2 center">
-														<i class="small material-icons">vpn_key</i>
-													</div>
-													<label class="col s10" for="no_kamar">Nomor Kamar</label>
-													<div class="col s10">
-														<select class="browser-default" id="no_kamar">
-															<option value=""disabled selected>Pilih Kamar</option>
-															<option value="S01">S01</option>
-															<option value="S02">S02</option>
-															<option value="S03">S03</option>
-															<option value="S04">S04</option>
-															<option value="S05">S05</option>
-															<option value="S06">S06</option>
-															<option value="S07">S07</option>
-															<option value="S08">S08</option>
-															<option value="S09">S09</option>
-															<option value="S10">S10</option>
-															<option value="S11">S11</option>
-															<option value="S12">S12</option>
-															<option value="S13">S13</option>
-															<option value="S14">S14</option>
-															<option value="S15">S15</option>
-														</select>
-													</div>
-												</div>
-												<div class="col s12 m11 l11" id="tglCheckIn">
+												<div class="col s12 m11 l11" id="ttlTamu">
 													<div class="input-field col s2 center">
 														<i class="small material-icons">date_range</i>
 													</div>
-													<label class="col s10" for="check_in">Check-In</label>
+													<label class="col s10" for="ttl_tamu">Tanggal Lahir</label>
 													<div class="col s10">
-														<input id="check_in" type="date" class="datepicker">
+														<input id="ttl_tamu" type="date" class="datepicker">
 													</div>
 												</div>
-												<div class="col s12 m11 l11" id="tglCheckOut">
+												<div class="col s12 m11 l11" id="alamatTamu">
 													<div class="input-field col s2 center">
-														<i class="small material-icons">date_range</i>
+														<i class="small material-icons">location_on</i>
 													</div>
-													<label class="col s10" for="check_out">Check-Out</label>
-													<div class="col s10">
-														<input id="check_out" type="date" class="datepicker">
+													<div class="input-field col s10">
+														<input id="alamat_tamu" type="text" class="validate">
+														<label for="alamat_tamu">Alamat</label>
+													</div>
+												</div>
+												<div class="col s12 m11 l11" id="telephoneTamu">
+													<div class="input-field col s2 center">
+														<i class="small material-icons">phone</i>
+													</div>
+													<div class="input-field col s10">
+														<input id="telp_tamu" type="text" class="validate">
+														<label for="telp_tamu">Telephone</label>
 													</div>
 												</div>
 											</div>
