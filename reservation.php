@@ -25,6 +25,7 @@
 							<ul id="nav-mobile" class="right hide-on-med-and-down">
 								<li class="active"><a href="reservation.php">Reservation</a></li>
 								<li><a href="transactions.php">Transaction</a></li>
+								<li><a href="index.php">LOGOUT</a></li>
 							</ul>
 						</div>
 					</div>
