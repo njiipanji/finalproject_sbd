@@ -11,8 +11,8 @@
 			$new_menyewa = "insert into MENYEWA values('".$_SESSION['no_kamar']."','".$_SESSION['id_transaksi']."')";
 	        $new_menyewa_exec = $conn->exec($new_menyewa);
 	        if ($new_menyewa_exec) {
-	            $update_room = "update KAMAR set STATUS_KAMAR='1' where NO_KAMAR='".$_SESSION['no_kamar']."'";
-	            $conn->exec($update_room);
+	        //   $update_room = "update KAMAR set STATUS_KAMAR='1' where NO_KAMAR='".$_SESSION['no_kamar']."'";
+	        //   $conn->exec($update_room);
 
 	            // destroy session
 				$_SESSION['id_wisma'] = '';
