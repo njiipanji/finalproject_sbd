@@ -1,5 +1,10 @@
 <?php
 	session_start();
+	include "connect.php";
+	$query = "select nama_petugas
+			  from petugas
+			  where id_petugas='".$_SESSION['userlogin']."'";
+	$admin = $conn->query($query)->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +53,7 @@
 						<h1 class="header center blue-text text-lighten-1">Guest House ITS</h1>
 						<div class="row center">
 							<h5 class="header col s12 grey-text text-darken-4 light">Information System</h5>
-							<h5 class="header col s12 grey-text text-darken-4 light"><b>Welcome, <?php echo $_SESSION["userlogin"]?></b></h5>
+							<h5 class="header col s12 grey-text text-darken-4 light"><b>Welcome, <?php foreach ((array)$admin as $administrator) {} echo $administrator[0]?></b></h5>
 						</div>
 						<br><br>
 					</div>
