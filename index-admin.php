@@ -35,6 +35,7 @@
 								<li><a href="reservation.php">Reservation</a></li>
 								<li><a href="transactions.php">Transaction</a></li>
 								<li><a href="logout_auth.php">LOGOUT</a></li>
+								<li><a href="edit_profile.php"><i class="medium material-icons">person</i></a></li>
 							</ul>
 						</div>
 					</div>
