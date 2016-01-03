@@ -60,7 +60,7 @@
 						<div id="input" class="section scrollspy">
 							<div class="row">
 								<!--Form-->
-								<form class="col s12" action="#" method="post">
+								<form class="col s12" action="transactions_kamarkosong.php" method="post">
 									<div class="col s12 m12 l8 offset-l2">
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
@@ -69,11 +69,24 @@
 													<i class="medium material-icons">hotel</i>
 												</div>
 												<h5 class="center-align">CEK KAMAR KOSONG</h5>
-												<p class="center-align">Menampilkan kamar-kamar kosong dari berbagai wisma.</p><br><br>
-												<div class="col s12 m12 l12 center" id="cekKamarKosong">
-													<button class="btn waves-effect waves-light" type="submit">CEK
-														<i class="material-icons right">send</i>
-													</button>
+												<p class="center-align">Menampilkan kamar-kamar kosong dari berbagai wisma.</p><br>
+												<div class="col s12 m11 l11" id="tglCheckIn">
+													<div class="input-field col s2 center">
+														<i class="small material-icons">date_range</i>
+													</div>
+													<label class="col s10" for="check_in">Check-In</label>
+													<div class="col s10">
+														<input readonly name="check_in" id="check_in" type="date" class="datepicker" value="<?php echo $_POST['check_in'];?>">
+													</div>
+												</div>
+												<div class="col s12 m11 l11" id="tglCheckOut">
+													<div class="input-field col s2 center">
+														<i class="small material-icons">date_range</i>
+													</div>
+													<label class="col s10" for="check_out">Check-Out</label>
+													<div class="col s10">
+														<input readonly name="check_out" id="check_out" type="date" class="datepicker" value="<?php echo $_POST['check_out'];?>">
+													</div>
 												</div>
 											</div>
 										</div>
