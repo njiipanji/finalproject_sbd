@@ -1,5 +1,13 @@
 <?php
 	session_start();
+	include "connect.php";
+	$query = "select w.nama_wisma, jk.nama_jenis_kamar, k.no_kamar
+			  from kamar k, wisma w, jenis_kamar jk
+			  where k.status_kamar='0' and
+			  		k.id_wisma=w.id_wisma and
+			  		k.id_jenis_kamar=jk.id_jenis_kamar
+			  order by k.no_kamar asc";
+	$rooms = $conn->query($query)->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -61,12 +69,7 @@
 													<i class="medium material-icons">account_balance</i>
 												</div>
 												<h5 class="center-align">CEK KEUANGAN</h5>
-												<p class="center-align">Menampilkan pemasukan dan pengeluaran dari berbagai wisma.</p><br><br>
-												<div class="col s12 m12 l12 center" id="cekBalance">
-													<button class="btn waves-effect waves-light" type="submit">CEK
-														<i class="material-icons right">send</i>
-													</button>
-												</div>
+												<p class="center-align">Menampilkan pemasukan dari berbagai wisma.</p>
 											</div>
 										</div>
 									</div>
@@ -78,7 +81,34 @@
 			</div>
 
 			<!--TABEL QUERY-->
-			<div class="container"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m12 l10 offset-l1">
+						<table class="centered responsive-table highlight">
+							<thead>
+								<tr>
+									<th>WISMA</th>
+									<th>JENIS KAMAR</th>
+									<th>NO KAMAR</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php
+									foreach ((array)$rooms as $room) {
+										?>
+										<tr>
+											<td><?php echo $room['NAMA_WISMA']?></td>
+											<td><?php echo $room['NAMA_JENIS_KAMAR']?></td>
+											<td><?php echo $room['NO_KAMAR']?></td>
+										</tr>
+										<?php
+									}
+								?>
+							</tbody>
+						</table>
+					</div>	
+				</div>
+			</div>
 
 		</main>
 
