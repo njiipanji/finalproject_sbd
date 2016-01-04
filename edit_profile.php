@@ -3,7 +3,7 @@
 	include "connect.php";
 	$query = "select *
 			  from petugas
-			  where id_petugas='".$_SESSION['userlogin']."'";
+			  order by id_petugas asc";
 	$admins = $conn->query($query)->fetchAll();
 ?>
 
@@ -19,7 +19,7 @@
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-		<title>Edit Profile</title>
+		<title>Edit Petugas</title>
 	</head>
 	<body>
 		<header>
@@ -48,7 +48,7 @@
 				<div class="center"><br><br><br>
 					<img src="img/person.png" style="width:75px">
 					<h2>EDIT PROFILE</h2>
-					<p class="center-align light">Ubah data diri petugas yang sedang login.<br><br><br></p>
+					<p class="center-align light">Ubah data diri petugas.<br><br><br></p>
 				</div>
 			</div>
 			<div class="container">
@@ -61,6 +61,14 @@
 									<th>NAMA</th>
 									<th>ALAMAT</th>
 									<th>TELEPHONE</th>
+									<th></th>
+									<form method="post" action="add_petugas.php">
+										<th>
+											<button class="btn-floating waves-effect waves-light blue" type="submit">
+												<i class="material-icons">add</i>
+											</button>	
+							 			</th>
+									</form>
 								</tr>
 							</thead>
 							<tbody>
@@ -72,7 +80,20 @@
 											<td><?php echo $admin['NAMA_PETUGAS']?></td>
 											<td><?php echo $admin['ALAMAT_PETUGAS']?></td>
 											<td><?php echo $admin['TELP_PETUGAS']?></td>
-											<td><a href="edit_petugas.php"><i class="small material-icons">edit</i></a></td>
+											<form method="post" action="edit_petugas.php">
+												<td>
+													<button class="btn waves-effect waves-light" type="submit" name="id_petugas" value="<?php echo $admin['ID_PETUGAS'] ?>">
+														<i class="material-icons">edit</i>
+													</button>
+									 			</td>
+											</form>
+											<form method="get" action="del_auth.php">
+												<td>
+													<button class="btn waves-effect waves-light red" type="submit" name="id_petugas" value="<?php echo $admin['ID_PETUGAS'] ?>">
+														<i class="material-icons">delete</i>
+													</button>
+									 			</td>
+											</form>
 										</tr>
 										<?php
 									}
