@@ -43,7 +43,7 @@
 				<div class="center"><br><br><br>
 					<img src="img/person.png" style="width:75px">
 					<h2>EDIT PROFILE</h2>
-					<p class="center-align light">Ubah data diri petugas yang sedang login.<br><br></p>
+					<p class="center-align light">Ubah data diri petugas.<br><br></p>
 				</div>
 			</div>
 			<div class="container">
@@ -63,7 +63,7 @@
 														<i class="small material-icons">person_pin</i>
 													</div>
 													<div class="input-field col s10">
-														<input readonly name="id_petugas" id="id_petugas" type="text" value="<?php echo $_SESSION['userlogin'];?>">
+														<input readonly name="id_petugas" id="id_petugas" type="text" value="<?php echo $_POST['id_petugas'];?>">
 														<label for="id_petugas">ID Petugas</label>
 													</div>
 												</div>
