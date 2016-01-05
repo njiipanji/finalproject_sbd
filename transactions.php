@@ -29,6 +29,7 @@
 							<ul id="nav-mobile" class="right hide-on-med-and-down">
 								<li><a href="reservation.php">Reservation</a></li>
 								<li class="active"><a href="transactions.php">Transaction</a></li>
+								<li><a href="task.php">Task</a></li>
 								<li><a href="logout_auth.php">LOGOUT</a></li>
 							</ul>
 						</div>
@@ -111,7 +112,7 @@
 													<i class="medium material-icons">account_balance</i>
 												</div>
 												<h5 class="center-align">CEK KEUANGAN</h5>
-												<p class="center-align">Menampilkan pemasukan dari berbagai wisma.</p><br><br>
+												<p class="center-align">Menampilkan pemasukan dari berbagai wisma dan pemasukan<br>terbesar dari 3 wisma yang ada.</p><br><br>
 												<div class="col s12 m12 l12 center" id="cekBalance">
 													<button class="btn waves-effect waves-light" type="submit">CEK
 														<i class="material-icons right">send</i>
@@ -142,7 +143,6 @@
 													<i class="medium material-icons">attach_money</i>
 												</div>
 												<h5 class="center-align">CEK TRANSAKSI BULAN</h5>
-												<p class="center-align">Menampilkan transaksi di bulan tertentu dari berbagai wisma.</p><br>
 												<div class="col s12 m11 l11" id="transaksi_bulan">
 													<div class="input-field col s2 center">
 														<i class="small material-icons">date_range</i>
