@@ -38,7 +38,7 @@
               where id_jenis_kamar='".$id_jkamar."'";
     $harga = $conn->query($query)->fetchAll();
     foreach ((array)$harga as $total) {
-        $total_bayar = $total[0];
+        $total_bayar = $lama_inap * $total[0];
     }
     $_SESSION['total_bayar'] = $total_bayar;
 
