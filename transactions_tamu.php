@@ -1,12 +1,11 @@
 <?php
 	session_start();
 	include "connect.php";
-	$query = "select w.nama_wisma, jk.nama_jenis_kamar, k.no_kamar
-			  from kamar k, wisma w, jenis_kamar jk
-			  where k.status_kamar='0' and
-			  		k.id_wisma=w.id_wisma and
-			  		k.id_jenis_kamar=jk.id_jenis_kamar
-			  order by k.no_kamar asc";
+	$query = "select t.*
+			  from tamu t, transaksi_sewa_kamar u
+			  where to_char(u.TGL_CHECKIN,'MM') = 11 AND
+			  		to_char(t.TTL_TAMU,'MM') = 11 AND
+			  		t.id_tamu = u.id_tamu";
 	$rooms = $conn->query($query)->fetchAll();
 ?>
 
@@ -49,7 +48,7 @@
 		<main>
 			<div class="container">
 				<div class="center">
-					<br>
+					<br>		
 					<h1>TRANSACTIONS</h1>
 				</div>
 			</div>
@@ -60,7 +59,7 @@
 						<div id="input" class="section scrollspy">
 							<div class="row">
 								<!--Form-->
-								<form class="col s12" action="#" method="post">
+								<form class="col s12" action="transactions_tamu.php" method="post">
 									<div class="col s12 m12 l8 offset-l2">
 										<!--Box-->
 										<div class="card-panel grey lighten-5 z-depth-1">
@@ -133,9 +132,11 @@
 						<table class="centered responsive-table highlight">
 							<thead>
 								<tr>
-									<th>WISMA</th>
-									<th>JENIS KAMAR</th>
-									<th>NO KAMAR</th>
+									<th>NO IDENTITAS</th>
+									<th>NAMA</th>
+									<th>TANGGAL LAHIR</th>
+									<th>ALAMAT</th>
+									<th>NO TELEPHONE</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -143,9 +144,11 @@
 									foreach ((array)$rooms as $room) {
 										?>
 										<tr>
-											<td><?php echo $room['NAMA_WISMA']?></td>
-											<td><?php echo $room['NAMA_JENIS_KAMAR']?></td>
-											<td><?php echo $room['NO_KAMAR']?></td>
+											<td><?php echo $room['ID_TAMU']?></td>
+											<td><?php echo $room['NAMA_TAMU']?></td>
+											<td><?php echo $room['TTL_TAMU']?></td>
+											<td><?php echo $room['ALAMAT_TAMU']?></td>
+											<td><?php echo $room['TELP_TAMU']?></td>
 										</tr>
 										<?php
 									}
