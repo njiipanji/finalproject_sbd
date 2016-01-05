@@ -1,12 +1,26 @@
 <?php
 	session_start();
 	include "connect.php";
-	$query = "select w.nama_wisma, jk.nama_jenis_kamar, k.no_kamar
-			  from kamar k, wisma w, jenis_kamar jk
-			  where k.status_kamar='0' and
-			  		k.id_wisma=w.id_wisma and
-			  		k.id_jenis_kamar=jk.id_jenis_kamar
-			  order by k.no_kamar asc";
+	$tgl_checkin = $_POST['check_in'];
+	$tgl_checkout = $_POST['check_out'];
+	$query = "select distinct w.nama_wisma, jk.nama_jenis_kamar, k.no_kamar
+			  from kamar k, jenis_kamar jk, wisma w
+			  where k.no_kamar not in (select distinct m.no_kamar
+			  							from menyewa m, transaksi_sewa_kamar t
+			  							where ((to_timestamp('".$tgl_checkin." 10:00:00', 'yyyy-mm-dd HH24:MI:SS') <= t.tgl_checkin AND
+			  									to_timestamp('".$tgl_checkout." 10:00:00', 'yyyy-mm-dd HH24:MI:SS') <= t.tgl_checkout AND
+			  									to_timestamp('".$tgl_checkout." 10:00:00', 'yyyy-mm-dd HH24:MI:SS') >= t.tgl_checkin) OR
+												(to_timestamp('".$tgl_checkin." 10:00:00', 'yyyy-mm-dd HH24:MI:SS') >= t.tgl_checkin AND
+			  									to_timestamp('".$tgl_checkout." 10:00:00', 'yyyy-mm-dd HH24:MI:SS') >= t.tgl_checkout AND
+			  									to_timestamp('".$tgl_checkout." 10:00:00', 'yyyy-mm-dd HH24:MI:SS') <= t.tgl_checkin) OR
+												(to_timestamp('".$tgl_checkin." 10:00:00', 'yyyy-mm-dd HH24:MI:SS') <= t.tgl_checkin AND
+			  									to_timestamp('".$tgl_checkout." 10:00:00', 'yyyy-mm-dd HH24:MI:SS') >= t.tgl_checkout) OR
+												(to_timestamp('".$tgl_checkin." 10:00:00', 'yyyy-mm-dd HH24:MI:SS') >= t.tgl_checkin AND
+			  									to_timestamp('".$tgl_checkout." 10:00:00', 'yyyy-mm-dd HH24:MI:SS') <= t.tgl_checkout)) AND
+			  									m.id_transaksi = t.id_transaksi) AND
+					jk.id_jenis_kamar = k.id_jenis_kamar AND
+					w.id_wisma = k.id_wisma
+			  order by w.nama_wisma, k.no_kamar";
 	$rooms = $conn->query($query)->fetchAll();
 ?>
 
