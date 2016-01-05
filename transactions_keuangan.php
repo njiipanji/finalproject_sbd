@@ -1,13 +1,23 @@
 <?php
 	session_start();
 	include "connect.php";
-	$query = "select w.nama_wisma, jk.nama_jenis_kamar, k.no_kamar
-			  from kamar k, wisma w, jenis_kamar jk
-			  where k.status_kamar='0' and
-			  		k.id_wisma=w.id_wisma and
-			  		k.id_jenis_kamar=jk.id_jenis_kamar
-			  order by k.no_kamar asc";
-	$rooms = $conn->query($query)->fetchAll();
+	$query_wisma = "select w.nama_wisma, sum(t.total) as total_pemasukan
+			  from wisma w, transaksi_sewa_kamar t, menyewa m, kamar k
+			  where m.id_transaksi=t.id_transaksi AND
+			  		k.no_kamar=m.no_kamar AND
+			  		w.id_wisma=k.id_wisma
+			  group by w.nama_wisma
+			  order by w.nama_wisma asc";
+	$firstresult = $conn->query($query_wisma)->fetchAll();
+
+	$query_max = "select max(total_pemasukan) as total
+				  from (select w.id_wisma, sum(t.total) as total_pemasukan
+				  		from wisma w, transaksi_sewa_kamar t, menyewa m, kamar k
+					    where m.id_transaksi=t.id_transaksi AND
+					  		k.no_kamar=m.no_kamar AND
+					  		w.id_wisma=k.id_wisma
+					    group by w.id_wisma)";
+	$secondresult = $conn->query($query_max)->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +79,7 @@
 													<i class="medium material-icons">account_balance</i>
 												</div>
 												<h5 class="center-align">CEK KEUANGAN</h5>
-												<p class="center-align">Menampilkan pemasukan dari berbagai wisma.</p>
+												<p class="center-align">Menampilkan pemasukan dari berbagai wisma dan pemasukan<br>terbesar dari 3 wisma yang ada.</p>
 											</div>
 										</div>
 									</div>
@@ -80,7 +90,7 @@
 				</div>
 			</div>
 
-			<!--TABEL QUERY-->
+			<!--TABEL QUERY1-->
 			<div class="container">
 				<div class="row">
 					<div class="col s12 m12 l10 offset-l1">
@@ -88,18 +98,42 @@
 							<thead>
 								<tr>
 									<th>WISMA</th>
-									<th>JENIS KAMAR</th>
-									<th>NO KAMAR</th>
+									<th>TOTAL PEMASUKAN</th>
 								</tr>
 							</thead>
 							<tbody>
 								<?php
-									foreach ((array)$rooms as $room) {
+									foreach ((array)$firstresult as $result1) {
 										?>
 										<tr>
-											<td><?php echo $room['NAMA_WISMA']?></td>
-											<td><?php echo $room['NAMA_JENIS_KAMAR']?></td>
-											<td><?php echo $room['NO_KAMAR']?></td>
+											<td><?php echo $result1['NAMA_WISMA']?></td>
+											<td><?php echo $result1['TOTAL_PEMASUKAN']?></td>
+										</tr>
+										<?php
+									}
+								?>
+							</tbody>
+						</table>
+					</div>	
+				</div>
+			</div><br><br>
+
+			<!--TABEL QUERY2-->
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m12 l10 offset-l1">
+						<table class="centered responsive-table highlight">
+							<thead>
+								<tr>
+									<th>PEMASUKAN TERBESAR</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php
+									foreach ((array)$secondresult as $result2) {
+										?>
+										<tr>
+											<td><h4><?php echo $result2['TOTAL']?></h4></td>
 										</tr>
 										<?php
 									}
