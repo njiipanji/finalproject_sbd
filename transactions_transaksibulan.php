@@ -1,12 +1,13 @@
 <?php
 	session_start();
 	include "connect.php";
-	$query = "select w.nama_wisma, jk.nama_jenis_kamar, k.no_kamar
-			  from kamar k, wisma w, jenis_kamar jk
-			  where k.status_kamar='0' and
-			  		k.id_wisma=w.id_wisma and
-			  		k.id_jenis_kamar=jk.id_jenis_kamar
-			  order by k.no_kamar asc";
+	$query = "select w.nama_wisma, count(t.id_transaksi) as JUMLAH_PENYEWAAN
+			  from kamar k, wisma w, menyewa m, TRANSAKSI_SEWA_KAMAR t
+			  where to_char(t.TGL_CHECKIN,'MM') = ".$_POST['transaksi_bulan']." and
+			  		m.id_transaksi=t.id_transaksi and
+			  		k.NO_KAMAR=m.NO_KAMAR and
+			  		w.ID_WISMA=k.ID_WISMA
+			  group by w.nama_WISMA having count(t.id_transaksi) > 5";
 	$rooms = $conn->query($query)->fetchAll();
 ?>
 
@@ -123,9 +124,8 @@
 						<table class="centered responsive-table highlight">
 							<thead>
 								<tr>
-									<th>WISMA</th>
-									<th>JENIS KAMAR</th>
-									<th>NO KAMAR</th>
+									<th>NAMA WISMA</th>
+									<th>JUMLAH PENYEWAAN</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -134,8 +134,7 @@
 										?>
 										<tr>
 											<td><?php echo $room['NAMA_WISMA']?></td>
-											<td><?php echo $room['NAMA_JENIS_KAMAR']?></td>
-											<td><?php echo $room['NO_KAMAR']?></td>
+											<td><?php echo $room['JUMLAH_PENYEWAAN']?></td>
 										</tr>
 										<?php
 									}
