@@ -1,5 +1,11 @@
 <?php
 	session_start();
+	include "connect.php";
+	$query = "select to_char(t.tgl_checkin, 'MM') as bulan_transaksi
+			  from transaksi_sewa_kamar t
+			  group by to_char(t.tgl_checkin, 'MM') having count(t.id_transaksi) > 5
+			  order by to_char(t.tgl_checkin, 'MM')";
+	$result = $conn->query($query)->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -150,19 +156,40 @@
 													<label class="col s10" for="transaksi_bulan">Bulan Transaksi</label>
 													<div class="col s10">
 														<select class="browser-default" id="transaksi_bulan" name="transaksi_bulan">
-															<option value="" selected>Pilih Bulan</option>
-															<option value="1">Januari</option>
-															<option value="2">Februari</option>
-															<option value="3">Maret</option>
-															<option value="4">April</option>
-															<option value="5">Mei</option>
-															<option value="6">Juni</option>
-															<option value="7">Juli</option>
-															<option value="8">Agustus</option>
-															<option value="9">September</option>
-															<option value="10">Oktober</option>
-															<option value="11">November</option>
-															<option value="12">Desember</option>
+															<?php
+																foreach ((array)$result as $results) {
+																	?>
+																		<option value="<?php echo $results['BULAN_TRANSAKSI']?>"><?php
+																			$bulan=$results['BULAN_TRANSAKSI'];
+																			if ($bulan=="1") {
+																				echo "Januari";
+																			} else if ($bulan=="2") {
+																				echo "Februari";
+																			} else if ($bulan=="3") {
+																				echo "Maret";
+																			} else if ($bulan=="4") {
+																				echo "April";
+																			} else if ($bulan=="5") {
+																				echo "Mei";
+																			} else if ($bulan=="6") {
+																				echo "Juni";
+																			} else if ($bulan=="7") {
+																				echo "Juli";
+																			} else if ($bulan=="8") {
+																				echo "Agustus";
+																			} else if ($bulan=="9") {
+																				echo "September";
+																			} else if ($bulan=="10") {
+																				echo "Oktober";
+																			} else if ($bulan=="11") {
+																				echo "November";
+																			} else if ($bulan=="12") {
+																				echo "Desember";
+																			}?>
+																		</option>
+																	<?php
+																}
+															?>
 														</select>
 													</div>
 												</div>
